@@ -3,9 +3,8 @@ import React from "react";
 import { MyModal } from "../components/MyModal/MyModal";
 import { useCycle } from "framer-motion";
 
-
 export default {
-  title: 'myModal',
+  title: "myModal",
   component: MyModal,
 };
 
@@ -23,15 +22,15 @@ export const base = () => {
 };
 
 export const complex = () => {
-    const [isPopupOpen, TogglePopup] = useCycle(false, true);
-  
-    return (
-      <>
-        <button onClick={TogglePopup}>Trigger</button>
-        <MyModal trigger={isPopupOpen} onClose={TogglePopup}>
-            <h1 style={{color: "teal"}}>Success</h1>
-            <p>Your Employee is successfully added</p>
-        </MyModal>
-      </>
-    );
-  };
+  const [isPopupOpen, TogglePopup] = useCycle(false, true);
+
+  return (
+    <>
+      <button onClick={TogglePopup}>Trigger</button>
+      <MyModal trigger={isPopupOpen} onClose={TogglePopup}>
+        <h1 style={{ color: "teal" }}>Success</h1>
+        <p>Your Employee is successfully added</p>
+      </MyModal>
+    </>
+  );
+};

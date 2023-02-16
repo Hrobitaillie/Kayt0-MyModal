@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import "../../styles/MyModal";
+import "../../styles/MyModal.css";
 import React from "react";
 import { CloseIcon } from "../CloseIcon";
+import { PropTypes } from "prop-types";
 
 export const MyModal = ({ children, trigger, onClose }) => {
   const displayAnimations = {
@@ -14,7 +15,6 @@ export const MyModal = ({ children, trigger, onClose }) => {
       x: "-100%",
     },
   };
-
   return (
     <section
       className={
@@ -56,3 +56,10 @@ export const MyModal = ({ children, trigger, onClose }) => {
     </section>
   );
 };
+
+
+MyModal.protoTypes = {
+  children: PropTypes.object.isRequired,
+  trigger: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired
+}
